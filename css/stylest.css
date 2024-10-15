@@ -1,0 +1,112 @@
+/* Variables */
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+/* Header Sticky */
+header {
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+header #logo-pokemon {
+  width: 165px;
+  height: 90px;
+  margin-right: 10px;
+}
+header h1 {
+  color: #3b4cca;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+/* Search Container Sticky */
+.search-container {
+  top: 90px;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+.search-container input {
+  width: 250px;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.search-container input:focus {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #3b4cca;
+}
+.search-container button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  background-color: #ffcb05;
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.search-container button:hover {
+  background-color: #d1a600;
+}
+
+/* Pokemon Grid */
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.pokemon-grid .pokemon-card {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.pokemon-grid .pokemon-card:hover {
+  transform: scale(1.05);
+}
+.pokemon-grid .pokemon-card img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.pokemon-grid .pokemon-card h3 {
+  color: #3b4cca;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}/*# sourceMappingURL=stylest.css.map */

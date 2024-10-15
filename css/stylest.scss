@@ -1,0 +1,129 @@
+/* Variables */
+$primary-color: #ffcb05; // Color principal Pokémon
+$secondary-color: #3b4cca; // Color secundario Pokémon
+$background-color: #f0f0f0; // Fondo suave
+$white-color: #ffffff;
+$gray-color: #e0e0e0;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; // Ocupa toda la altura de la ventana
+  // Evita el scroll en el body, lo manejamos en el contenido
+}
+
+main {
+  flex: 1; // Permite que el main ocupe todo el espacio disponible
+  overflow-y: auto; // Habilita el scroll en el contenido principal
+  padding: 20px;
+}
+
+/* Header Sticky */
+header {
+  top: 0; // Fija el header en la parte superior
+  z-index: 100; // Asegura que se quede encima del resto del contenido
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white-color;
+  padding: 10px;
+  box-shadow: 0 4px 6px $shadow-color; // Añade sombra para destacarlo
+  margin-bottom: 20px;
+
+  #logo-pokemon {
+    width: 165px;
+    height: 90px;
+    margin-right: 10px;
+  }
+
+  h1 {
+    color: $secondary-color;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* Search Container Sticky */
+.search-container {
+  top: 90px; // Ajusta la posición para que quede justo debajo del header
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  background-color: $white-color;
+  padding: 10px;
+  box-shadow: 0 4px 6px $shadow-color;
+  margin-bottom: 30px;
+
+  input {
+    width: 250px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: $white-color;
+    box-shadow: 0 4px 6px $shadow-color;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &:focus {
+      box-shadow: 0 6px 10px $shadow-color;
+      border: 2px solid $secondary-color;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background-color: $primary-color;
+    color: $white-color;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+/* Pokemon Grid */
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+
+  .pokemon-card {
+    background-color: $white-color;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px $shadow-color;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    h3 {
+      color: $secondary-color;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+  }
+}
